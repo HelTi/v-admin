@@ -7,6 +7,8 @@ import TecTable from '@/pages/teacher/TecTable'
 import StuInfo from '@/pages/student/Student'
 import chartJs from '@/pages/Chart/chartJS'
 import eChart from '@/pages/Chart/eChart'
+import eTable from '@/pages/Table/eTable'
+import bTable from '@/pages/Table/bTable'
 Vue.use(Router)
 
 export default new Router({
@@ -45,6 +47,16 @@ export default new Router({
       path: '/echart',
       name: 'echart',
       component: eChart
+    },
+    {
+      path: '/btable',
+      name: 'btable',
+      component: bTable
+    },
+    {
+      path: '/etable',
+      name: 'etable',
+      component: eTable
     }
   ]
 })

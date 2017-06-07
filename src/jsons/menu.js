@@ -7,8 +7,8 @@ export default [
         icon:'fa fa-pie-chart',
         show:true,
         treeview: [
-            {'title': 'ChartJS', 'rt_name': 'chartjs'},
-            {'title': 'Echart', 'rt_name': 'echart'}
+            {'title': 'ChartJS', 'rt_name': 'chartjs','rt_parent':'图表'},
+            {'title': 'Echart', 'rt_name': 'echart','rt_parent':'图表'}
         ]
     },
     {
@@ -16,10 +16,10 @@ export default [
         show:false,
         icon:'fa fa-laptop',
         treeview: [
-            {title: 'Buttons','rt_name':'stuinfo'},
-            {title: 'Sliders'},
-            {title: 'Timeline'},
-            {title: 'Modals'}
+            {title: 'Buttons','rt_name':'stuinfo','rt_parent':'UI'},
+            {title: 'Sliders','rt_parent':'UI'},
+            {title: 'Timeline','rt_parent':'UI'},
+            {title: 'Modals','rt_parent':'UI'}
         ]
     },
     {
@@ -27,8 +27,8 @@ export default [
         show:false,
         icon:'fa fa-edit',
         treeview: [
-            {title: 'Form'},
-            {title: 'Editors'}
+            {title: 'Form','rt_parent':'表单'},
+            {title: 'Editors','rt_parent':'表单'}
         ]
     },
     {
@@ -36,8 +36,8 @@ export default [
         show:false,
         icon:'fa fa-table',
         treeview: [
-            {title:'简单表格'},
-            {title:'数据表格'}
+            {title:'element表格','rt_name':'etable','rt_parent':'表格'},
+            {title:'bootstrap表格','rt_name':'btable','rt_parent':'表格'}
         ]
 
     }

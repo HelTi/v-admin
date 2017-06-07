@@ -4,6 +4,7 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import App from './App'
 import router from './router'
+import store from './store'
 import './assets/css/bootstrap.css'
 import './assets/css/font-awesome.css'
 import './lib/resize.js'
@@ -13,8 +14,9 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    template: '<App/>',
-    components: {App}
+  el: '#app',
+  router,
+  store,
+  template: '<App/>',
+  components: {App}
 })
