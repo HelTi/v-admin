@@ -2,8 +2,8 @@
   <section class="content-header">
     <el-breadcrumb separator="/">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>{{rtParent}}</el-breadcrumb-item>
-      <el-breadcrumb-item>{{rtName}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-if="rtParent!=''">{{rtParent}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-if="rtName!=''">{{rtName}}</el-breadcrumb-item>
     </el-breadcrumb>
   </section>
 </template>
@@ -12,8 +12,6 @@
     name: 'breadcrumb',
     data() {
       return {
-        msg: '图表',
-        b: 'chartjs'
       }
     },
     computed: {
@@ -24,7 +22,13 @@
           return this.$store.state.breadCrumb.rtName;
       }
     },
-    methods: {}
+    methods: {
+
+    },
+    beforeRouteLeave(to,from,next){
+        console.log('leave');
+    }
+
   }
 </script>
 <style lang="scss" scoped>

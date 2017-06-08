@@ -6,7 +6,8 @@
       </li>
       <!--treeview-->
       <li class="treeview-menu">
-        <router-link to="/"><i class="fa fa-dashboard"></i>首页</router-link>
+        <!--  <router-link to="/"><i class="fa fa-dashboard"></i>首页</router-link>-->
+        <a href="/#" @click="goIndex()"><i class="fa fa-dashboard"></i>首页</a>
       </li>
       <li class="treeview-menu" v-for="(item,i) in menudata" :class="{active:item.show}">
         <a href="javascript:void(0);" v-on:click.stop="toogleMenu(item.show,i,$event)"
@@ -39,12 +40,18 @@
       }
     },
     methods: {
+      goIndex(){
+        this.$store.commit('setBreadCrumb', {
+          rtParent: '',
+          rtName: ''
+        });
+      },
       goRouter(rt, event){
         var router = rt.rt_name;
         var rtParent = rt.rt_parent ? rt.rt_parent : '';
-        this.$store.commit('setBreadCrumb',{
-          rtParent:rtParent,
-          rtName:router
+        this.$store.commit('setBreadCrumb', {
+          rtParent: rtParent,
+          rtName: router
         });
         if (router) {
           this.$router.push({name: router})
