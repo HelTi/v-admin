@@ -6,7 +6,7 @@
             if(!clientHeight) return;
             console.log(clientHeight + 'px');
             var footer=document.getElementById("content");
-            footer.style.setProperty('min-height',(clientHeight-45)+'px');
+            footer.style.setProperty('min-height',(clientHeight-37)+'px');
         };
         if(!doc.addEventListener)return;
         win.addEventListener(resizeEvt,recalc,false);

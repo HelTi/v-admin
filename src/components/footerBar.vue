@@ -1,6 +1,6 @@
 <template>
        <footer class="main-footer" id="footer">
-           <p>footer</p>
+        <p><strong>Copyright © 2017-2018</strong><span class="pull-right">By<a href="">HelTi</a></span></p>
        </footer>
 </template>
 <script>
@@ -26,6 +26,11 @@
     }
 </script>
 
-<style lang="css" scoped>
-    
+<style lang="scss" scoped>
+      #footer{
+         p{
+           margin:0;
+           padding:6px;
+         }
+      }
 </style>
