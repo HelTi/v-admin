@@ -1,6 +1,6 @@
 <template>
        <footer class="main-footer" id="footer">
-        <p><strong>Copyright © 2017-2018</strong><span class="pull-right">By<a href="https://github.com/HelTi">HelTi</a></span></p>
+        <p><strong>Copyright © 2017-2018</strong><span class="pull-right">By  <a href="https://github.com/HelTi">HelTi</a></span></p>
        </footer>
 </template>
 <script>
