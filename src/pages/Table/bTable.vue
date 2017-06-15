@@ -2,6 +2,14 @@
   <div>
     <div class="row">
       <div class="col-md-12">
+         <box>
+           <h3 slot="header" class="box-title">bootstrap表格</h3>
+           <b-table></b-table>
+         </box>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
         <box border-color="box-success">
           <h3 slot="header" class="box-title">静态表格</h3>
           <div class="row" slot="footer">
@@ -41,13 +49,14 @@
 </template>
 <script>
   import box from '../../components/Box/box'
+  import bTable from '../../components/Table/bTable'
   export default {
     name: 'btable',
     data() {
       return {}
     },
     methods: {},
-    components:{box}
+    components:{box,bTable}
   }
 </script>
 <style>
