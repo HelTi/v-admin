@@ -1,5 +1,6 @@
 <template>
     <div id="app" class="wrapper">
+        <top-progress ref="topProgress"></top-progress>
         <side-bar></side-bar>
         <div class="content-wrapper" id="content">
             <!--headnav-->
@@ -17,6 +18,7 @@
     import headNav from './components/headNav'
     import footerBar from './components/footerBar'
     import breadCrumb from './components/breadCrumb'
+    import topProgress from './components/topProgress'
     export default {
         name: 'app',
         data() {
@@ -25,20 +27,31 @@
                 wrapper: 'wrapper'
             }
         },
-        methods: {
-
+        methods: {},
+        beforeMount(){
+          console.log('beforeMount')
         },
-        components: {sideBar, footerBar,headNav,breadCrumb}
+        mounted () {
+            this.$refs.topProgress.start()
+
+            // Use setTimeout for demo
+            setTimeout(() => {
+                this.$refs.topProgress.done()
+            }, 1000)
+        },
+        components: {sideBar, footerBar, headNav, breadCrumb, topProgress}
     }
 </script>
 <style lang="scss">
     @import "styles/color";
+
     body {
-        font-family: -apple-system,PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Helvetica Neue,sans-serif;
+        font-family: -apple-system, PingFang SC, Hiragino Sans GB, Arial, Microsoft YaHei, Helvetica Neue, sans-serif;
         font-weight: 400;
         overflow-x: hidden;
         overflow-y: auto;
     }
+
     html,
     body {
         height: 100%;
@@ -51,17 +64,20 @@
         overflow-x: hidden;
         overflow-y: auto;
     }
+
     .content-wrapper {
-         .content,.content-header{
-             padding:0px 8px;
-         }
+        .content, .content-header {
+            padding: 0px 8px;
+        }
     }
+
     .content-wrapper, .main-footer {
         transition: transform .3s ease-in-out, margin .3s ease-in-out;
         margin-left: 230px;
         z-index: 820;
         min-height: 100%;
     }
+
     /**
     *  响应式
     */
@@ -80,6 +96,7 @@
             }
         }
     }
+
     @media (max-width: 767px) {
         .main-sidebar {
             transform: translate(-230px, 0);
