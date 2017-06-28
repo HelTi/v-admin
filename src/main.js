@@ -9,7 +9,9 @@ import './assets/css/bootstrap.css'
 import './assets/css/font-awesome.css'
 import './lib/resize.js'
 import 'element-ui/lib/theme-default/index.css'
+import axios from 'axios'
 Vue.use(ElementUI)
+Vue.prototype.$http=axios;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

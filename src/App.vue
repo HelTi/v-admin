@@ -29,9 +29,18 @@
         },
         methods: {},
         beforeMount(){
-          console.log('beforeMount')
+            console.log('beforeMount')
         },
         mounted () {
+            //测试代理
+            this.$http.get('/api/sql').then(function (response) {
+                console.log(response);
+                response.data.data.forEach((i)=>{
+                    console.log(i);
+                })
+            }).catch(function (error) {
+                console.log(error)
+            })
             this.$refs.topProgress.start()
 
             // Use setTimeout for demo
