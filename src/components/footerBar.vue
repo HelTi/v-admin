@@ -12,16 +12,6 @@
             }
         },
         methods:{
-            goRouter(index){
-               switch(index){
-                   case 1:
-                   this.$router.push({name:'index'})
-                   break;
-                   case 2:
-                   this.$router.push({name:'about'})
-                   break;
-               }
-            }
         }
     }
 </script>
